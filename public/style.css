@@ -5,28 +5,34 @@ body {
 }
 
 #form {
-  width: 98%;
+  width: 100%;
   height: 3rem;
   margin: 0 auto;
   background: #bebebe;
-  padding: 0.2rem 2rem;
+  padding: 0.2rem 1rem;
   position: fixed;
-  bottom: 2%;
+  bottom: 0;
   left: 0;
   right: 0;
   display: flex;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
-  border-radius: 10rem;
 }
 
-#input {
+#nickname {
+  width: 10%;
+  border: none;
+  padding: 0 1rem;
+  margin: 0.25rem;
+  margin-right: 2rem;
+}
+
+#msg {
   border: none;
   padding: 0 1rem;
   flex-grow: 1;
   margin: 0.25rem;
   margin-right: 2rem;
-  border-radius: 10rem;
 }
 
 #input:focus {
@@ -41,10 +47,10 @@ body {
   outline: none;
   color: #fff;
   cursor: pointer;
-  border-radius: 10rem;
 }
 
 #messages {
+  display: grid;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -56,4 +62,8 @@ body {
 
 #messages > li:nth-child(odd) {
   background: #efefef;
+}
+
+.mymessages {
+  text-align: right;
 }

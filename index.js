@@ -5,7 +5,7 @@ const io = require('socket.io')(http)
 
 const music = require('./routes/index.js')
 
-const {connectLog, disconnectLog, chatEmitter} = require('./chat')(io)
+const {connectLog, disconnectLog, chatEmitter, changeNickname} = require('./chat')(io)
 
 app.use(express.static('public'))
 
@@ -16,6 +16,7 @@ const onConnection = socket => {
 
   socket.on("disconnect", disconnectLog)
   socket.on("chat:message", chatEmitter)
+  socket.on("change:nickname", changeNickname)
 }
 
 io.on('connection', onConnection)
