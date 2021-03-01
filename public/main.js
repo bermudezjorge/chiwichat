@@ -3,6 +3,13 @@ const socket = io()
 const form = document.getElementById('form')
 const input = document.getElementById('input')
 
+const appendMessage = (msg) => {
+  var item = document.createElement('li')
+  item.textContent = msg
+  messages.appendChild(item)
+  window.scrollTo(0, document.body.scrollHeight)
+}
+
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
@@ -14,11 +21,5 @@ form.addEventListener('submit', (e) => {
 })
 
 socket.on('chat:message', function(msg) {
-  var item = document.createElement('li')
-
-  item.textContent = msg
-
-  messages.appendChild(item)
-
-  window.scrollTo(0, document.body.scrollHeight)
+  appendMessage(msg)
 });
